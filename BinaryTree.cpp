@@ -9,4 +9,7 @@ class Node{
     
         
         Node()
+        {
+            leftchild = nullptr; 
+        }
 };

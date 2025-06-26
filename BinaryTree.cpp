@@ -11,5 +11,6 @@ class Node{
         Node()
         {
             leftchild = nullptr; 
+            rightchild = nullptr;
         }
 };

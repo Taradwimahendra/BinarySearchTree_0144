@@ -46,5 +46,6 @@ class BinaryTree
         cin >> x;
 
         Node *newNode = new Node();
+        newNode->info = x;
     }
 }

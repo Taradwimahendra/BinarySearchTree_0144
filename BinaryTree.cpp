@@ -59,5 +59,8 @@ class BinaryTree
             ROOT = newNode;
             return;
         }
+
+         if (x < parent->info)
+        {}
     }
 }

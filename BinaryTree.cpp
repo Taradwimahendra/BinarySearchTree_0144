@@ -65,5 +65,7 @@ class BinaryTree
             parent->leftchild = newNode;
             return;
         }
+        else if (x > parent->info)
+        {}
     }
 }

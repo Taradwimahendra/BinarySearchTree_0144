@@ -84,5 +84,7 @@ class BinaryTree
             cout << "Tree is Empty" << endl;
             return;
         }
+        if (ptr == nullptr)
+            return;
     }
 };

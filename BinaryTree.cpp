@@ -61,6 +61,9 @@ class BinaryTree
         }
 
          if (x < parent->info)
-        {}
+        {
+            parent->leftchild = newNode;
+            return;
+        }
     }
 }

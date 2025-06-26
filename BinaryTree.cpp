@@ -14,3 +14,6 @@ class Node{
             rightchild = nullptr;
         }
 };
+
+class BinaryTree
+{}

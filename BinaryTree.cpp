@@ -7,11 +7,11 @@ class Node{
         Node *leftchild;
         Node *rightchild;
     
-        
+        // constructor for node class
         Node()
         {
-            leftchild = nullptr; 
-            rightchild = nullptr;
+            leftchild = nullptr; // intialize left child to null
+            rightchild = nullptr; // intialize right child to null
         }
 };
 
@@ -22,64 +22,85 @@ class BinaryTree
 
     BinaryTree()
     {
-        ROOT = nullptr;
+        ROOT = nullptr; //intialize ROOT to null
     }
 
     void search(int element, Node *&parent, Node *&currentNode)
     {
+        //This function searchs the currentNode of the specified Node as wll as the current Node of its parent
         currentNode = ROOT;
         parent = nullptr;
         while ((currentNode != nullptr) && (currentNode->info != element))
         {
             parent = currentNode;
-             if (element < currentNode->info)
+            if (element < currentNode->info)
                 currentNode = currentNode->leftchild;
             else
                 currentNode = currentNode->rightchild;
         }
+        
     }
 
     void insert()
     {
-         int x;
+        int x;
         cout << "Masukkan nilai: ";
         cin >> x;
 
-        Node *newNode = new Node(); //step 1
-        newNode->info = x;// step 2
-        newNode->leftchild = nullptr; //step 3
-        newNode->rightchild = nullptr; //step 3
-        Node *parent = nullptr; //step 4
-        Node *currentNode = nullptr; //step 4
-        search(x, parent, currentNode); //step 4
+        //Step 1: Allocate memory for the new node 
+        Node *newNode = new Node();
 
-        //step 5
+        //step 2: Assign value to the field of new node
+        newNode->info = x;
+
+        // step 3: Make the left and right child of the new node point to NULL
+        newNode->leftchild = nullptr;
+        newNode->rightchild = nullptr;
+
+        // Step 4: locate the node which will be the parent of the node to be inserted
+        Node *parent = nullptr;
+        Node *currentNode = nullptr;
+        search(x, parent, currentNode);
+
+        // Step 5: if parent is NULL  (Tree is empty)
         if (parent == nullptr)
-        { 
+        {
+            //5a. Mark the new node as ROOT
             ROOT = newNode;
+
+            //5b. Exit
             return;
         }
 
-         if (x < parent->info)
+        // Step 6. if the values in the data field of the new node is less than that of parent
+        if (x < parent->info)
         {
+            //6a. Make the left child of parent point to the new node
             parent->leftchild = newNode;
+
+            //6b. eexit
             return;
         }
+          // Step 7. if the values in the data field of the new node is greater than that of parent
         else if (x > parent->info)
         {
+            //7a. Make the right child of parent point to the new node
             parent->rightchild = newNode;
+
+            //7b. eexit
             return;
         }
     }
 
-     bool isEmpty()
+    bool isEmpty()
     {
+        //check if the tree is empty
         return ROOT == nullptr; 
     }
 
-     void inorder(Node *ptr)
+    void inorder(Node *ptr)
     {
-         if (isEmpty())
+        if (isEmpty())
         {
             cout << "Tree is Empty" << endl;
             return;
@@ -88,7 +109,7 @@ class BinaryTree
             return;
 
         inorder(ptr->leftchild);
-        cout << ptr->info << " "; 
+        cout << ptr->info << " "; //parent
         inorder(ptr->rightchild);
     }
 
@@ -102,12 +123,12 @@ class BinaryTree
         if (ptr == nullptr)
             return;
 
-        cout << ptr->info << " ";
+        cout << ptr->info << " "; //parent
         preorder(ptr->leftchild);
         preorder(ptr->rightchild);
     }
 
-    void postorder(Node *ptr)
+     void postorder(Node *ptr)
     {
         if (isEmpty())
         {
@@ -123,8 +144,8 @@ class BinaryTree
         cout << ptr->info << " "; //parent
     }
 
-};
 
+};
 
 int main()
 {

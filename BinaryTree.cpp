@@ -76,4 +76,7 @@ class BinaryTree
     {
         return ROOT == nullptr; 
     }
+
+     void inorder(Node *ptr)
+    {}
 };

@@ -16,4 +16,6 @@ class Node{
 };
 
 class BinaryTree
-{}
+{
+    public:
+}

@@ -29,5 +29,7 @@ class BinaryTree
     {
         currentNode = ROOT;
         parent = nullptr;
+        while ((currentNode != nullptr) && (currentNode->info != element))
+        {}
     }
 }

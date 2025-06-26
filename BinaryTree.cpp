@@ -45,9 +45,12 @@ class BinaryTree
         cout << "Masukkan nilai: ";
         cin >> x;
 
-        Node *newNode = new Node();
-        newNode->info = x;
-        newNode->leftchild = nullptr;
-         newNode->rightchild = nullptr;
+        Node *newNode = new Node(); //step 1
+        newNode->info = x;// step 2
+        newNode->leftchild = nullptr; //step 3
+        newNode->rightchild = nullptr; //step 3
+        Node *parent = nullptr; //step 4
+        Node *currentNode = nullptr; //step 4
+        search(x, parent, currentNode); //step 4
     }
 }

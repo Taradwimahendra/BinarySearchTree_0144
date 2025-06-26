@@ -48,5 +48,6 @@ class BinaryTree
         Node *newNode = new Node();
         newNode->info = x;
         newNode->leftchild = nullptr;
+         newNode->rightchild = nullptr;
     }
 }

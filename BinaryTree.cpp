@@ -26,5 +26,7 @@ class BinaryTree
     }
 
     void search(int element, Node *&parent, Node *&currentNode)
-    {}
+    {
+        currentNode = ROOT;
+    }
 }

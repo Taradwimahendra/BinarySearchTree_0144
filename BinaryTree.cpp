@@ -55,6 +55,9 @@ class BinaryTree
 
         //step 5
         if (parent == nullptr)
-        {}
+        { 
+            ROOT = newNode;
+            return;
+        }
     }
 }
